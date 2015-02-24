@@ -26,4 +26,23 @@ function isEven(n) {
         return isEven(n - 2);
     }
 }
+
+//Decouple from function name 'isEven'
+
+function isEven(n) {
+    if (n === 0) {
+        return true;
+    }
+    else if (n === 1) {
+        return false;
+    }
+    else if (n < 0) {
+        return arguments.callee(-n);
+    }
+    else {
+        return arguments.callee(n - 2);
+    }
+}
+
+
 console.log(isEven(50));

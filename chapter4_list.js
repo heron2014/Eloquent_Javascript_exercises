@@ -27,7 +27,7 @@ function nth(list, n) {
         return list.value;
     }
     else {
-        return nth(list.rest, n - 1);
+        return nth(list.rest, n - 1); // return arguments.callee to decouple
     }
 }
 
